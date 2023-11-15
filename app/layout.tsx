@@ -1,6 +1,10 @@
-import type { Metadata } from 'next'
-import { Noto_Sans } from 'next/font/google'
-import './globals.css'
+import type { Metadata } from 'next';
+import { Noto_Sans } from 'next/font/google';
+import './globals.css';
+import cn from 'classnames';
+import {Footer, Header, Sidebar } from '../components';
+import classNames from 'classnames';
+import styles from './layout.module.css';
 
 const inter = Noto_Sans({
   subsets: ["cyrillic"],
@@ -19,7 +23,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru">
-      <body className={inter.className}>{children}</body>
-    </html>
+      <body className={inter.className}>
+        <div className={styles.wrapper}>
+          <Header className={styles.header} />
+          <Sidebar className={styles.sidebar} />
+          <div className={styles.body}>
+            {children}
+          </div>
+          <Footer className={styles.footer}/>
+      </div>
+    </body>
+  </html>
   )
 }

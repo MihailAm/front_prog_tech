@@ -1,0 +1,18 @@
+/* stylelint-disable order/properties-order */
+/* stylelint-disable indentation */
+.footer {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 40px;
+    color: var(--black);
+    font-size: 16px;
+    line-height: 16px;
+
+    background: var(--fon-blue);
+    padding: 25px 30px;
+}
+
+.footer a:hover{
+    color: var(----gray-light);
+}
+

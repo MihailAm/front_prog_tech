@@ -2,6 +2,7 @@ import { ButtonProps } from './Button.props';
 import styles from './Button.module.css';
 import cn from 'classnames';
 import ArrowIcon from './arrow.svg';
+import Logo from './logo.svg'
 
 export const Button = ({appearance, arrow = 'none', children,className,...props  }: ButtonProps): JSX.Element => {
 	return(
