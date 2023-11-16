@@ -1,0 +1,30 @@
+/* DecorativeSearchBox.module.css */
+
+.searchBox {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px;
+    align-items: center;
+    background-color: var(--fon-blue); /* Новый цвет фона */
+    padding: 7px; /* Добавим немного отступов */
+    border-radius: 20px; /* Больше округления краев */
+  }
+  
+  .searchInput {
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 400px; 
+    font-family: 'Noto_Sans';
+    font-size: 15px;
+  }
+  
+  .searchButton {
+    background-color: var(--fon-blue);
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  

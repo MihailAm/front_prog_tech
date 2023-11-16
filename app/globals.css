@@ -5,8 +5,13 @@ body{
 	padding: 0;
 	
 	color:(var(--black));
-	background: #F5F6F8;
+	background: var(--white);
 	
+}
+
+p{
+	margin: 0;
+	padding: 0;
 }
 
 a{
@@ -30,6 +35,6 @@ a{
 	--gray-light:#EBEBEB;
 	--primary-hover:#23A7CF;
 	--ghost-hover:#E4EBED;
-	--fon-blue:#B1C7DE;
+	--fon-blue:#83BFCA;
 	--fon-white:#EBEAE8;
 }

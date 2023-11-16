@@ -5,7 +5,7 @@ import styles from './page.module.css';
 import { Metadata } from 'next';
 import {Tag, P, Button, Htag } from '../components';
 import cn from 'classnames';
-import Logo from '../public/logo.svg';
+
 
 
 
@@ -13,7 +13,7 @@ export default function Home():JSX.Element {
   const [counter, setCounter] = useState<number>(0);
   return (
     <>
-      <Logo />
+      
       <Htag tag='h1'>{counter}</Htag>
       <Button appearance='primary' arrow='right' onClick={() => setCounter(x => x + 1)}>Записаться</Button>
       <Button appearance='ghost' arrow='down'>Оставить отзыв</Button>

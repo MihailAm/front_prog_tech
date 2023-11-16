@@ -1,12 +1,23 @@
 import { HeaderProps } from "./Header.props";
 import styles from './Header.module.css';
 import cn from 'classnames';
+import Logo from './logo_1.svg';
+import Icon from './icon.svg';
+import SearchString from '../DecorativeSearchBox/SearchBox';
 
 
-export const Header = ({...props}: HeaderProps): JSX.Element => {
+
+export const Header = ({className, ...props}: HeaderProps): JSX.Element => {
     return (
-        <div {...props}>
-            Header
-        </div>
+        <header className={cn(className, styles.header)}{...props}>
+            <Logo/>
+            <SearchString/>
+            <div className={styles.phoneNumbers}>
+                <p>8 (900) 589-52-17</p>
+                <p>8 (904) 599-87-15</p>
+                <p className={styles.freeCall}>Бесплатный звонок по России</p>
+            </div>
+            <a href="" target="_black"><Icon/></a>
+        </header>
     )
 }

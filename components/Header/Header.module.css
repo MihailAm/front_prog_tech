@@ -1,53 +1,34 @@
-/* stylelint-disable order/properties-order */
-/* stylelint-disable indentation */
-.button{
-    display: inline-block;
 
-    box-sizing: border-box;
-    padding: 10px;
 
-    cursor: pointer;
-    text-align: center;
-
-    border: none;
-    border-radius: 10px;
+.header {
+    display: grid;
+    grid-template-columns: 300px 600px auto 100px;
+    gap: 40px;
+    color: var(--black);
+    font-size: 16px;
+    line-height: 16px;
+    align-items: center;
+    justify-items: center;
     
-    font-size: 14px;
-    transition: all 0.2s;
+
+    background: white;
+    padding: 25px 30px;
 }
 
-.primary{
-    color: var(--white);
-    background-color: var(--primary);
-}
+.phoneNumbers {
+    justify-self: end;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0px;
+    margin: 0px;
+  }
+  
+.freeCall {
+    align-self:flex-start;
+    grid-column: -2/-1;
+    color: var(--fon-blue);
+    font-size: 10px;
+    padding: 0px;
+    margin: 0px;
+  }
 
-.primary:hover{
-    background-color: var(--primary-hover);
-}
-
-.ghost{
-    color: var(--black);
-    background: none;
-    border: 1px solid var(--gray-light);
-}
-
-.ghost:hover{
-    color: var(--black);
-    background-color: var(--ghost-hover);
-    border: 1px solid var(--gray-light);
-}
-
-.arrow{
-    display: inline-block;
-    margin-left: 10px;
-}
-
-.down{
-    transform: rotate(90deg);
-    transition: all 0.2s;
-}
-
-.primary svg,
-.ghost:hover svg{
-    fill: var(--white);
-}

@@ -1,5 +1,3 @@
-/* stylelint-disable order/properties-order */
-/* stylelint-disable indentation */
 .footer {
     display: grid;
     grid-template-columns: 1fr auto auto;
@@ -13,6 +11,6 @@
 }
 
 .footer a:hover{
-    color: var(----gray-light);
+    color: var(--gray-light);
 }
 
