@@ -5,25 +5,29 @@ import styles from './page.module.css';
 import { Metadata } from 'next';
 import {Tag, P, Button, Htag } from '../components';
 import cn from 'classnames';
+import { API } from './api';
+import { MenuItem } from '@/interfaces/menu.interface';
 
 
+async function getMenu(firstCategory: number): Promise<MenuItem[]> {
+  const res = await fetch(API.topPage.find,{
+    method: 'POST',
+    body:JSON.stringify({
+      firstCategory
+    }),
+    headers: new Headers({'content-type':'application/json'})
+  });
+  return res.json();
+}
 
-
-export default function Home():JSX.Element {
-  const [counter, setCounter] = useState<number>(0);
+export default async function Home() {
+  const menu = await getMenu(0);
   return (
     <>
+      <div>
+        {JSON.stringify(menu)}
+      </div>
       
-      <Htag tag='h1'>{counter}</Htag>
-      <Button appearance='primary' arrow='right' onClick={() => setCounter(x => x + 1)}>Записаться</Button>
-      <Button appearance='ghost' arrow='down'>Оставить отзыв</Button>
-      <P size='l'>Большой</P>
-      <P>Средний</P>
-      <P size='s'>Маленький</P>
-      <Tag size='s'>Ghost</Tag>
-      <Tag size='m' color='red'>Red</Tag>
-      <Tag size='s' color='green'>Green</Tag>
-      <Tag color='primary'>Green</Tag>
     </>
   
   )

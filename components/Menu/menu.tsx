@@ -14,10 +14,10 @@ import { TopLevelCategory } from '@/interfaces/page.interface';
 
 
 export const firstLevelMenu: FirstLevelMenuItem[] = [
-	{ route: 'courses', name: 'Курсы', icon: <Doctors />, id: TopLevelCategory.Courses },
-	{ route: 'services', name: 'Сервисы', icon: <Yslug />, id: TopLevelCategory.Services },
-	{ route: 'books', name: 'Книги', icon: <MedCard />, id: TopLevelCategory.Books },
-	{ route: 'products', name: 'Продукты', icon: <Tov />, id: TopLevelCategory.Products }
+	{ route: 'courses', name: 'Врачи', icon: <Doctors />, id: TopLevelCategory.Courses },
+	{ route: 'services', name: 'Услуги', icon: <Yslug />, id: TopLevelCategory.Services },
+	{ route: 'books', name: 'Мед Карта', icon: <MedCard />, id: TopLevelCategory.Books },
+	{ route: 'products', name: '', icon: <Tov />, id: TopLevelCategory.Products }
 ];
 
 export const Menu = (): JSX.Element => {
@@ -65,6 +65,7 @@ export const Menu = (): JSX.Element => {
     return(
         <div className={styles.menu}>
             {buildFirstLevel()}
+			
         </div>
     )
 };

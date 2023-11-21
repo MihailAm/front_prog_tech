@@ -8,6 +8,7 @@
     background-color: var(--fon-blue); /* Новый цвет фона */
     padding: 7px; /* Добавим немного отступов */
     border-radius: 20px; /* Больше округления краев */
+    justify-self: end;
   }
   
   .searchInput {
