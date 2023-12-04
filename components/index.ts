@@ -5,3 +5,7 @@ export * from './Tag/Tag';
 export * from './Footer/Footer';
 export * from './Header/Header';
 export * from './Sidebar/Sidebar';
+export * from './Login/Login';
+export * from './Registration/Registration';
+export * from './Doctor/Doctor';
+export * from './DoctorList/DoctorsList';

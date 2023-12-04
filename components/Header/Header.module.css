@@ -1,34 +1,37 @@
-
-
 .header {
-    display: grid;
-    grid-template-columns:  600px auto 100px;
-    gap: 40px;
-    color: var(--black);
-    font-size: 16px;
-    line-height: 16px;
-    align-items: center;
-    justify-items: center;
-    
+  display: grid;
+  grid-template-columns: 300px 600px auto 100px;
+  gap: 40px;
+  color: var(--black);
+  font-size: 16px;
+  line-height: 16px;
+  align-items: center;
+  justify-items: center;
 
-    
-    padding: 25px 30px;
+
+
+  padding: 25px 30px;
 }
 
 .phoneNumbers {
-    justify-self: end;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0px;
-    margin: 0px;
-  }
-  
-.freeCall {
-    align-self:flex-start;
-    grid-column: -2/-1;
-    color: var(--fon-blue);
-    font-size: 10px;
-    padding: 0px;
-    margin: 0px;
-  }
+  justify-self: end;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0px;
+  margin: 0px;
+}
 
+.freeCall {
+  align-self:flex-start;
+  grid-column: -2/-1;
+  color: var(--fon-blue);
+  font-size: 10px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.logo{
+  justify-self: center;
+  padding: 20px 0px 10px 20px;  
+  
+}

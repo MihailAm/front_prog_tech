@@ -5,7 +5,7 @@ body{
 	padding: 0;
 	
 	color:(var(--black));
-	background: var(--white);
+	background: var(--green);
 	
 }
 
@@ -23,6 +23,15 @@ a{
 
 *{
 	box-sizing: border-box;
+}
+
+li{
+    list-style-type: none; /* Убираем маркеры */
+}
+   
+ul{
+    margin: 0; /* Отступ слева в браузере IE и Opera */
+    padding: 0; /* Отступ слева в браузере Firefox, Safari, Chrome */
 }
 
 :root{

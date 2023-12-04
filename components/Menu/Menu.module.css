@@ -1,82 +1,37 @@
-.firstLevel {
+.container {
 	display: grid;
-	align-items: center;
-
-	margin-top: 20px;
-
-	font-size: 18px;
-	font-weight: 500;
-	line-height: 25px;
-	grid-template-columns: 24px 1fr;
-	gap: 20px;
-}
-
-.firstLevelList {
-	padding: 0;
-
-	list-style: none;
-}
-
-.firstLevelActive,
-.firstLevel:hover {
-	color: var(--primary);
-}
-
-.firstLevelActive svg,
-.firstLevel:hover svg {
-	fill: var(--primary);
-}
-
-.secondLevel {
-	margin-bottom: 10px;
-	padding: 0;
-
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	gap: 10px;
+  }
+  
+.firstCat{
+	font-size: 16px;
 	cursor: pointer;
-	text-transform: uppercase;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	transition: background-color 0.3s ease;
+	
 
-	color: var(--gray-dark);
-	border: none;
-
-	background: none;
-
-	font-size: 12px;
-
-	font-weight: 300;
 }
-
-.secondBlock {
-	margin-top: 15px;
-	margin-left: 12px;
-	padding: 0 0 0 32px;
-
-	list-style: none;
-
-	border-left: 1px solid #DFDFDF;
-}
-
-.secondLevelBlock {
-	overflow: hidden;
-
-	padding: 0;
-
-	list-style: none;
-}
-
-.thirdLevel {
-	display: block;
-
-	margin-bottom: 10px;
-
+.menuItem {
+	font-size: 16px;
 	cursor: pointer;
-
-	color: var(--gray-dark);
-	outline-offset: -1px;
-
-	font-size: 14px;
-	font-weight: 500;
+	transition: background-color 0.3s ease;
+}
+.menuItem:hover {
+	background-color: #f0f0f0;
 }
 
-.thirdLevelActive,
-.thirdLevel:hover {
-	color: var(--primary);
+.secondLevel{
+	margin-bottom: 10px;
+}
+
+.selectedItem {
+	background-color: var(--fon-blue);
+	color: #fff;
+}
+
+.menuContainer.open {
+	max-height: 500px; /* Выберите подходящую высоту */
 }

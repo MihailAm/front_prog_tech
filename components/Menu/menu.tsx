@@ -1,71 +1,79 @@
 import styles from './Menu.module.css';
 import cn from 'classnames';
-import { useContext, KeyboardEvent, useState } from 'react';
-import { AppContext } from '../../context/app.context';
-import { FirstLevelMenuItem, PageItem } from '../../interfaces/menu.interface';
+import { useContext, useState,useEffect } from 'react';
+import  { Specialization } from '../../interfaces/menu.interface';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
-import  Doctors  from './d1.svg';
-import  Yslug  from './d2.svg';
-import  MedCard  from './d3.svg';
-import  Tov  from './d4.svg';
-import { TopLevelCategory } from '@/interfaces/page.interface';
+import router, { useRouter } from 'next/router';
 
 
+export const Menu = () => {
+  const [specializations, setSpecializations] = useState<Specialization[]>([]);
+  const [selectedCategory, setSelectedCategory] = useState<number | null>(null);
+  const [selectedSpecialization, setSelectedSpecialization] = useState<string | null>(null);
+  const [doctors, setDoctors] = useState([]);
+  
 
-export const firstLevelMenu: FirstLevelMenuItem[] = [
-	{ route: 'courses', name: 'Врачи', icon: <Doctors />, id: TopLevelCategory.Courses },
-	{ route: 'services', name: 'Услуги', icon: <Yslug />, id: TopLevelCategory.Services },
-	{ route: 'books', name: 'Мед Карта', icon: <MedCard />, id: TopLevelCategory.Books },
-	{ route: 'products', name: '', icon: <Tov />, id: TopLevelCategory.Products }
-];
+  useEffect(() => {
+    // Fetch data from the API
+    fetch('https://localhost:7138/api/specializations')
+      .then(response => response.json())
+      .then((data: Specialization[]) =>{
+        console.log('Received data:', data);
+        setSpecializations(data);
+      })
+      .catch(error => console.error('Error fetching data:', error));
+  }, []);
 
-export const Menu = (): JSX.Element => {
-	const { menu, setMenu, firstCategory } = useContext(AppContext);
-	
+  const handleCategoryClick = (specializationId: number) => {
+    setSelectedCategory(prevCategory => (prevCategory === specializationId ? null : specializationId));
+  };
 
-	const buildFirstLevel = () => {
-		return (
-            <>
-				{firstLevelMenu.map(m => (
-					<div key={m.route}>
-						
-							<a href={`/${m.route}`}>
-								<div className={cn(styles.firstLevel, {
-									[styles.firstLevelActive]: m.id == firstCategory
-								})}>
-									{m.icon}
-									<span>{m.name}</span>
-								</div>
-							</a>
-						
-						{m.id == firstCategory && buildSecondLevel(m)}
-                        </div>
-				))}
-            </>
-		);
-	};
+  const handleSpecClick = (specialName:string) => {
+    setSelectedSpecialization((prevValue) => (prevValue === specialName ? null : specialName));
+  
+    // router.push(`/doctors?specialization=${encodeURIComponent(specialName)}`);
+  
+  }; 
 
-	const buildSecondLevel = (menuItem: FirstLevelMenuItem) => {
-		return (
-			<div>
-				{menu.map(m => (
-                    <div className={styles.secondLevel}>
-                        <div className={styles.secondLevel}>{m._id.secondCategory}</div>
-                        <div className={cn(styles.secondLevelBlock,{
-                            [styles.secondLevelBlockOpened]:m.isOpened
-                        })}>
-                        </div>
-                    </div>
-                ))}
-			
-			</div>
-		);
-	};
-    return(
-        <div className={styles.menu}>
-            {buildFirstLevel()}
-			
-        </div>
-    )
+
+  return (
+    <div className={styles.container}>
+      
+      <span
+          className={cn(styles.firstCat, { [styles.selectedItem]: selectedCategory === 0 })}
+          onClick={() => handleCategoryClick(0)}>
+          Врачи
+          
+        </span>
+      
+        {selectedCategory === 0 && (
+          <ul>
+            {specializations.map(specialization => (
+              <li className={styles.secondLevel} key={specialization.specializationId}>
+                
+                <Link href={`/doctors/${encodeURIComponent(specialization.specialName)}`}>
+                <span
+                  className={cn(styles.menuItem, { [styles.selectedItem]: selectedCategory === specialization.specializationId })}
+                  onClick={() => handleSpecClick(specialization.specialName)}>
+                  {specialization.specialName}
+                </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
+    
+
+      <span
+          className={cn(styles.firstCat, { [styles.selectedItem]: selectedCategory === 0 })}
+          onClick={() => handleCategoryClick(0)}>
+          Услуги
+        </span>
+        <span
+          className={cn(styles.firstCat, { [styles.selectedItem]: selectedCategory === 0 })}
+          onClick={() => handleCategoryClick(0)}>
+          Мед Карта
+        </span>
+    </div>
+  );
 };

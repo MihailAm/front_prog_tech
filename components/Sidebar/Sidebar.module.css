@@ -2,10 +2,6 @@
 	display: grid;
 	align-content: start;
 	gap: 20px;
-}
-
-.logo{
-    justify-self: center;
-    padding: 20px 0px 10px 20px;  
-    
+	justify-content: left;
+	margin: 40px 0 0 120px;
 }
