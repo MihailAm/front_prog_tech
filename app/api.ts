@@ -1,6 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import Cors from 'cors';
 import {initMiddleware} from '../lib/init-middleware';
+import { Service } from '@/interfaces/service.interface';
 
 // Инициализируйте middleware
 const corsMiddleware = initMiddleware(
@@ -55,6 +56,21 @@ export const getDoctorsBySpecialization = async (specialization: string) => {
     return doctors;
   } catch (error) {
     console.error('Error fetching doctors data:', error);
+    return [];
+  }
+};
+
+
+export const getServices = async (): Promise<Service[]> => {
+  try {
+    const response = await fetch('https://localhost:7117/api/services');
+    if (!response.ok) {
+      throw new Error('Failed to fetch services data');
+    }
+    const services: Service[] = await response.json();
+    return services;
+  } catch (error) {
+    console.error('Error fetching services data:', error);
     return [];
   }
 };

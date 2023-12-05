@@ -28,6 +28,11 @@
 }
 
 .selectedItem {
+	font-size: 16px;
+	cursor: pointer;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
 	background-color: var(--fon-blue);
 	color: #fff;
 }

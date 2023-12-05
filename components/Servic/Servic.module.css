@@ -1,0 +1,30 @@
+.servicCard {
+    border: 1px solid #ccc;
+    padding: 16px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 100px; /* Две колонки */
+    grid-template-areas:
+    'content costTag'; /* Задаем области сетки */
+    gap: 16px; /* Расстояние между элементами */
+    align-items: start; /* Выравнивание по верхнему краю */
+  }
+  
+.costTag {
+    margin-top: 24px;
+    justify-self: end;
+    grid-area: costTag;  /* Поместите costTag в конец своей колонки */
+}
+.content{
+    grid-column: 1 / span 1;
+}
+
+.text{
+    text-align:justify
+}
+
+.button{
+    width: 100px;
+    align-self: flex-end;
+}
+/* Добавьте стили для кнопки, чтобы она не растягивалась */

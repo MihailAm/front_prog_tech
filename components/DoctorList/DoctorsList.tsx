@@ -1,4 +1,4 @@
-// app/DoctorsList.tsx
+
 import React from 'react';
 import { getDoctorsData } from '../../app/api';
 import { Doctor } from '../Doctor/Doctor';

@@ -9,3 +9,5 @@ export * from './Login/Login';
 export * from './Registration/Registration';
 export * from './Doctor/Doctor';
 export * from './DoctorList/DoctorsList';
+export * from './Servic/Servic';
+export * from './ServicList/ServicList'

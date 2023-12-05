@@ -40,7 +40,7 @@ export const Menu = () => {
     <div className={styles.container}>
       
       <span
-          className={cn(styles.firstCat, { [styles.selectedItem]: selectedCategory === 0 })}
+          className={styles.selectedItem}
           onClick={() => handleCategoryClick(0)}>
           Врачи
           
@@ -63,15 +63,17 @@ export const Menu = () => {
           </ul>
         )}
     
-
-      <span
-          className={cn(styles.firstCat, { [styles.selectedItem]: selectedCategory === 0 })}
-          onClick={() => handleCategoryClick(0)}>
-          Услуги
-        </span>
+    
         <span
-          className={cn(styles.firstCat, { [styles.selectedItem]: selectedCategory === 0 })}
-          onClick={() => handleCategoryClick(0)}>
+          className={styles.selectedItem}>
+            <Link href="/servic"> 
+          Услуги
+          </Link>
+        </span>
+        
+        
+        <span
+          className={styles.selectedItem}>
           Мед Карта
         </span>
     </div>
