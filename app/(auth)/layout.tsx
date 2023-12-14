@@ -1,12 +1,11 @@
 import type { Metadata } from 'next';
 import { Noto_Sans } from 'next/font/google';
-import './globals.css';
-import cn from 'classnames';
-import {Footer, Header, Sidebar } from '../components';
-import classNames from 'classnames';
-import styles from './layout.module.css';
+import './global.css';
+import {Footer, Header, Sidebar } from '../../components';
+import styles from '../(site)/layout.module.css';
+import router from 'next/router';
 
-const inter = Noto_Sans({
+const inte = Noto_Sans({
   subsets: ["cyrillic"],
   weight: '400'
 })
@@ -23,10 +22,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru">
-      <body className={inter.className}>
+      <body className={inte.className}>
         <div className={styles.wrapper}>
           <Header className={styles.header} />
-          <Sidebar className={styles.sidebar} />
           <div className={styles.body}>
             {children}
           </div>

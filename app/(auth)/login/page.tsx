@@ -1,6 +1,6 @@
 'use client'
 import React from 'react';
-import {Login, Tag } from '../../components';
+import {Login, Tag } from '../../../components';
 
 
 export default function Home() {

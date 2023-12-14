@@ -5,11 +5,11 @@ import { Doctor } from '../../components/Doctor/Doctor';
 import { DoctorProps } from '@/interfaces/doctor.interface';
 import { getDoctorsBySpecialization } from '@/app/api';
 
-interface DoctorsProps {
+interface SpecialProps {
   specialization: string;
 }
 
-export const Doctors: React.FC<DoctorsProps> = ({ specialization }) => {
+export const Doctors: React.FC<SpecialProps> = ({ specialization }) => {
   const [doctors, setDoctors] = useState<DoctorProps[]>([]);
 
   useEffect(() => {

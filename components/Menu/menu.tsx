@@ -66,7 +66,7 @@ export const Menu = () => {
     
         <span
           className={styles.selectedItem}>
-            <Link href="/servic"> 
+          <Link href="/servic"> 
           Услуги
           </Link>
         </span>
@@ -74,7 +74,9 @@ export const Menu = () => {
         
         <span
           className={styles.selectedItem}>
+          <Link href="/medCard"> 
           Мед Карта
+          </Link>
         </span>
     </div>
   );

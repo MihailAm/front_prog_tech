@@ -1,6 +1,6 @@
 'use client'
 import React from 'react';
-import { ServicList } from '../../components';
+import { ServicList } from '../../../components';
 import styles from './style.module.css';
 
 
