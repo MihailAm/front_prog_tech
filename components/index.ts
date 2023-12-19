@@ -13,3 +13,4 @@ export * from './Servic/Servic';
 export * from './ServicList/ServicList';
 export * from './Doctors/Doctors';
 export * from './Admission/Admission';
+export * from './MenuAdmin/menuAdmin';

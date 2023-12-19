@@ -28,12 +28,7 @@ export const Menu = () => {
     setSelectedCategory(prevCategory => (prevCategory === specializationId ? null : specializationId));
   };
 
-  const handleSpecClick = (specialName:string) => {
-    setSelectedSpecialization((prevValue) => (prevValue === specialName ? null : specialName));
   
-    // router.push(`/doctors?specialization=${encodeURIComponent(specialName)}`);
-  
-  }; 
 
 
   return (
@@ -54,7 +49,7 @@ export const Menu = () => {
                 <Link href={`/doctors/${encodeURIComponent(specialization.specialName)}`}>
                 <span
                   className={cn(styles.menuItem, { [styles.selectedItem]: selectedCategory === specialization.specializationId })}
-                  onClick={() => handleSpecClick(specialization.specialName)}>
+                  >
                   {specialization.specialName}
                 </span>
                 </Link>

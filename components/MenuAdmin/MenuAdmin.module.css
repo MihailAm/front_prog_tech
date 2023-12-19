@@ -1,0 +1,45 @@
+.container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 400px));
+	gap: 10px;
+	margin: 30px;
+	justify-content: center;
+  }
+  
+.firstCat{
+	font-size: 16px;
+	cursor: pointer;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	transition: background-color 0.3s ease;
+	
+
+}
+.menuItem {
+	font-size: 16px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+.menuItem:hover {
+	background-color: #f0f0f0;
+}
+
+.secondLevel{
+	margin-bottom: 10px;
+}
+
+.selectedItem {
+	font-size: 16px;
+	cursor: pointer;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	background-color: var(--fon-blue);
+	color: #fff;
+	text-align: center;
+}
+
+.menuContainer.open {
+	max-height: 500px; /* Выберите подходящую высоту */
+}

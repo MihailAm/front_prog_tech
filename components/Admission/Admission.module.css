@@ -1,0 +1,33 @@
+.card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    margin: 0 0 0 90px;
+    margin-bottom: 170px;
+}
+
+.info_doc *{
+    padding-bottom: 7px;
+}
+
+.card_H2 {
+    margin-bottom: 16px;
+}
+
+.label_card {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.datePicker {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 6px;
+}
+
+  
